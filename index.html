@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Ilon O'yini</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Bosh Ekran (Home Screen Menu) -->
+  <div id="homeScreen" class="home-screen">
+    <div class="home-menu">
+      <h1 class="game-title">ILON O'YINI</h1>
+      <button id="resumeBtn" class="main-btn" data-i18n="resume">▶ Davom ettirish</button>
+      <button id="newGameBtn" class="main-btn primary" data-i18n="newGame">🎮 Yangi o'yin</button>
+    </div>
+  </div>
+
+  <!-- Level Banner -->
+  <div id="levelBanner" class="level-banner hidden">
+    <span id="levelBannerText">LEVEL UP!</span>
+  </div>
+
+  <!-- Chap tepadagi panel -->
+  <div class="top-left-panel">
+    <div id="levelDisplay"><span data-i18n="level">DAROJA</span>: 1</div>
+    <button id="mainSettingsBtn" class="settings-btn" data-i18n="settings">⚙️ Sozlamalar</button>
+  </div>
+
+  <!-- Tepa o'rtada timer -->
+  <div id="topCenterTimer" class="top-center-timer hidden">
+    <span id="timerLabel">⚡BONUS</span>: <span id="shieldSeconds">10</span>s
+  </div>
+
+  <!-- O'ng tepadagi Ochko paneli -->
+  <div class="score-board">
+    <div><span data-i18n="highScore">Rekord</span>: <span id="highScore">0</span></div>
+    <div><span data-i18n="score">Achko</span>: <span id="score">0</span></div>
+  </div>
+
+  <!-- Sozlamalar Oynasi (Modal) -->
+  <div id="settingsModal" class="modal hidden">
+    <div class="modal-content">
+      <button id="homeBtn" class="menu-action-btn home-action" data-i18n="home">🏠 Bosh ekran</button>
+      <button id="restartBtn" class="menu-action-btn restart-action" data-i18n="restart">🔄 Qayta boshlash</button>
+      <button id="soundToggleBtn" class="menu-action-btn sound-action" data-i18n="soundOn">🔊 Ovoz: Yoqilgan</button>
+      
+      <hr class="divider">
+      <h2 data-i18n="languageTitle">Til / Язык / Language</h2>
+      <div class="lang-selector">
+        <button class="lang-btn active" data-lang="uz">🇺🇿 UZ</button>
+        <button class="lang-btn" data-lang="ru">🇷🇺 RU</button>
+        <button class="lang-btn" data-lang="en">🇬🇧 EN</button>
+      </div>
+
+      <hr class="divider">
+      <h2 data-i18n="difficultyTitle">Qiyinlik Darajasi</h2>
+      <button class="diff-btn active" data-diff="easy" data-i18n="diffEasy">Oson</button>
+      <button class="diff-btn" data-diff="medium" data-i18n="diffMedium">O'rtacha</button>
+      <button class="diff-btn" data-diff="hard" data-i18n="diffHard">Qiyin</button>
+      <button class="diff-btn danger" data-diff="super" data-i18n="diffSuper">☠️ Super Qiyin</button>
+      <button id="closeSettings" class="close-btn" data-i18n="close">Yopish</button>
+    </div>
+  </div>
+
+  <!-- Mobil Joystik -->
+  <div id="joystickZone" class="joystick-zone">
+    <div id="joystickBase" class="joystick-base">
+      <div id="joystickStick" class="joystick-stick"></div>
+      <div class="arrow up">▲</div>
+      <div class="arrow down">▼</div>
+      <div class="arrow left">◀</div>
+      <div class="arrow right">▶</div>
+    </div>
+  </div>
+
+  <canvas id="gameCanvas"></canvas>
+
+  <script src="script.js"></script>
+</body>
+</html>
